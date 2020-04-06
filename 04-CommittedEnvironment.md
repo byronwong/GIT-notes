@@ -2,12 +2,30 @@
 4.Committed Environment
 =======================
 
-## Main Menu
 [0. Contents](00-Contents.md)
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
 [3. Staging Environment](03-StagingEnvironment.md)
 [4. Committed Environment](04-CommittedEnvironment.md)
+<!-- TOC -->
+
+- [Writing commit messages](#writing-commit-messages)
+- [Reading Commit Log](#reading-commit-log)
+- [Editing a Commit](#editing-a-commit)
+- [Undoing Commits](#undoing-commits)
+    - [Method 1a - adding a file to the commit](#method-1a---adding-a-file-to-the-commit)
+    - [Method 1b - changing the commit message](#method-1b---changing-the-commit-message)
+    - [Method 2 - rollback a file several commits before (Single File)](#method-2---rollback-a-file-several-commits-before-single-file)
+    - [Method 3 - Revert the commit (Basically reverse the commit to undo changes)](#method-3---revert-the-commit-basically-reverse-the-commit-to-undo-changes)
+    - [Method 4 - Rollback multiple commits by moving the HEAD](#method-4---rollback-multiple-commits-by-moving-the-head)
+    - [Method 4a - Soft Reset (just moves the HEAD pointer) (safest)](#method-4a---soft-reset-just-moves-the-head-pointer-safest)
+    - [Method 4b - Mixed Reset (default)](#method-4b---mixed-reset-default)
+    - [Method 4c - Hard Reset (destructive)](#method-4c---hard-reset-destructive)
+- [Navigating The Commit Tree](#navigating-the-commit-tree)
+- [Listing Commits](#listing-commits)
+- [Seeing a commit](#seeing-a-commit)
+
+<!-- /TOC -->
 [5. Remote Environment](05-RemoteEnvironment.md)
 [6. Branching](06-Branching.md)
 [7. Utility](07-Utility.md)

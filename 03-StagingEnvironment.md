@@ -2,10 +2,18 @@
 3.Staging Environment
 =====================
 
-## Main Menu
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
 [3. Staging Environment](03-StagingEnvironment.md)
+<!-- TOC -->
+
+- [Seeing differences in Staging](#seeing-differences-in-staging)
+- [Committing to Git](#committing-to-git)
+- [Committing from working](#committing-from-working)
+- [Un-staging Items](#un-staging-items)
+- [Stashing](#stashing)
+
+<!-- /TOC -->
 [4. Committed Environment](04-CommittedEnvironment.md)
 [5. Remote Environment](05-RemoteEnvironment.md)
 [6. Branching](06-Branching.md)

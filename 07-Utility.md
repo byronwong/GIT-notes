@@ -1,8 +1,6 @@
 
 7.Utility 
 =========
-
-## Contents
 [0. Contents](00-Contents.md)
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
@@ -11,9 +9,21 @@
 [5. Remote Environment](05-RemoteEnvironment.md)
 [6. Branching](06-Branching.md)
 [7. Utility](07-Utility.md)
+<!-- TOC -->
 
+- [0.1. gitignore](#01-gitignore)
+- [0.2. Ignoring Tracked files](#02-ignoring-tracked-files)
+- [0.3. Remove Untracked files](#03-remove-untracked-files)
+- [0.4. Fetch all branches locally](#04-fetch-all-branches-locally)
+- [0.5. Cleaning up and Pruning](#05-cleaning-up-and-pruning)
+    - [0.5.1. Local clean up](#051-local-clean-up)
+    - [0.5.2. Remote](#052-remote)
+- [0.6. Setting Up Alias Commands](#06-setting-up-alias-commands)
+- [0.7. Useful aliases](#07-useful-aliases)
 
-## .gitignore
+<!-- /TOC -->
+
+## 0.1. gitignore
 
 1. Create a file called .gitignore
 2. Can be specific such as a file name
@@ -38,7 +48,7 @@ Things that would be good to ignore:
 [For something more specific:](https://github.com/github/gitignore)
 
 
-## Ignoring Tracked files
+## 0.2. Ignoring Tracked files
 
 - How to ignore file that are already being tracked by git
 - git will not ignore a file if it was tracked before the rule was added
@@ -54,7 +64,7 @@ Things that would be good to ignore:
     // file still is in the repository
 ```
 
-## Remove Untracked files
+## 0.3. Remove Untracked files
 ```
   git clean
 
@@ -67,7 +77,43 @@ Things that would be good to ignore:
     // files in staging are protected from clean
 ```
 
-## Setting Up Alias Commands
+## 0.4. Fetch all branches locally
+```
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+```
+
+## 0.5. Cleaning up and Pruning
+[Housekeeping](https://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
+
+### 0.5.1. Local clean up
+`git branch`
+`$ git checkout master`
+`$ git branch --merged` - returns merged branches that are safe to delete
+`git branch --no-merged` - returns un-merged branches which you will need to decide on use `-D` option to delete
+
+### 0.5.2. Remote
+`git branch -r` - 
+`git branch -r --merged` - returns remote merged branches
+
+`git remote prune origin --dry-run`
+
+But this (`git branch -r --merged`) command does not provide much information. What if this branch is merged, but still used for feature development. Would be cool to know last commit date and author.This magic snippet provides all required information:
+```js
+  for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+```
+
+Now, you can delete own remote branches, and ask other authors to clean-up theirs:
+`git push origin --delete branch-name`
+
+Similar to the one above but for non-merged branches
+```js
+  for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+```
+
+
+## 0.6. Setting Up Alias Commands
 
 Creating shortcuts
 Best to go to your user directory
@@ -79,12 +125,15 @@ Best to go to your user directory
 	git config --global alias.st "status"
 		// creates a shortcut for git status
 
-## Useful aliases
+## 0.7. Useful aliases
 
 	git config --global alias.co checkout
 	git config --global alias.ci commit
 	git config --global alias.br branch
 	git config --global alias.dfs "diff --staged"
 	git config --global alias.logg "log --graph --decorate --oneline --abbrev-commit --all"
+  
+  git config --global alias.fire git add -A && git commit -n -m "FIRE!!!" && git push --force --no-verify
+  `alias fire='git add -A && git commit -n -m "FIRE!!!" && git push --force --no-verify'`
 
 

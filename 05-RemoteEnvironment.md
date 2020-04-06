@@ -2,12 +2,23 @@
 5.Remote Environment
 ====================
 
-## Main Menu
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
 [3. Staging Environment](03-StagingEnvironment.md)
 [4. Committed Environment](04-CommittedEnvironment.md)
 [5. Remote Environment](05-RemoteEnvironment.md)
+<!-- TOC -->
+
+- [List remotes](#list-remotes)
+- [Adding a remote](#adding-a-remote)
+- [Remove remote](#remove-remote)
+- [Pushing to a remote](#pushing-to-a-remote)
+- [Pushing to a different or existing remote (not registered)](#pushing-to-a-different-or-existing-remote-not-registered)
+- [Cloning a repository](#cloning-a-repository)
+- [Private collaborating](#private-collaborating)
+- [Open-source collaborating](#open-source-collaborating)
+
+<!-- /TOC -->
 [6. Branching](06-Branching.md)
 [7. Utility](07-Utility.md)
 

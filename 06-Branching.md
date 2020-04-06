@@ -1,7 +1,6 @@
 6.Branching
 ===========
 
-## Main Contents
 [0. Contents](00-Contents.md)
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
@@ -9,6 +8,22 @@
 [4. Committed Environment](04-CommittedEnvironment.md)
 [5. Remote Environment](05-RemoteEnvironment.md)
 [6. Branching](06-Branching.md)
+<!-- TOC -->
+
+- [Basic commands](#basic-commands)
+- [Creating a branch and going to a new branch](#creating-a-branch-and-going-to-a-new-branch)
+- [Creating a remote branch and setup tracking](#creating-a-remote-branch-and-setup-tracking)
+- [Renaming Branch](#renaming-branch)
+- [Deleting Branches](#deleting-branches)
+- [Deleting a remote branch](#deleting-a-remote-branch)
+- [Cleaning up remote branches](#cleaning-up-remote-branches)
+- [CLeaning local branches](#cleaning-local-branches)
+- [Merging Branches](#merging-branches)
+- [Merging Conflicts](#merging-conflicts)
+- [Common merging commands](#common-merging-commands)
+- [Merging Fetched changes](#merging-fetched-changes)
+
+<!-- /TOC -->
 [7. Utility](07-Utility.md)
 
 ## Basic commands
@@ -68,6 +83,16 @@
   git remote prune origin --dry-run   // lists branches that can be deleted/pruned (remote)
 
   git remote prune origin   // run prune  
+```
+
+## CLeaning local branches
+```
+  git branch --merged // returns merged branches
+
+  git branch --no-merged // returns non merged branches
+
+  git push origin -d [branch name] // To remove branch unfortunately.
+
 ```
 
 ## Merging Branches

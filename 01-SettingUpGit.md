@@ -2,8 +2,21 @@
 1.Setting Up Git
 ================
 
-## Main Menu
 [1. Setting Up Git](01-SettingUpGit.md)
+<!-- TOC -->
+
+- [General Shell Commands](#general-shell-commands)
+- [Setting up terminal](#setting-up-terminal)
+- [Paging](#paging)
+- [Configuration Levels](#configuration-levels)
+- [Remote config](#remote-config)
+- [Setting up on Mac](#setting-up-on-mac)
+- [Auto complete on Mac](#auto-complete-on-mac)
+- [Auto completing already on windows](#auto-completing-already-on-windows)
+- [Mac and linux make sure the git completion script is installed](#mac-and-linux-make-sure-the-git-completion-script-is-installed)
+- [On Windows should be setup](#on-windows-should-be-setup)
+
+<!-- /TOC -->
 [2. Working Environment](02-WorkingEnvironment.md)
 [3. Staging Environment](03-StagingEnvironment.md)
 [4. Committed Environment](04-CommittedEnvironment.md)

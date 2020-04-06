@@ -1,10 +1,18 @@
 
 2.Working Environment
 =====================     
-
-## Main Menu
 [1. Setting Up Git](01-SettingUpGit.md)
 [2. Working Environment](02-WorkingEnvironment.md)
+<!-- TOC -->
+
+- [Initialising a repository](#initialising-a-repository)
+- [Seeing differences](#seeing-differences)
+- [Adding to staging](#adding-to-staging)
+- [Renaming Files](#renaming-files)
+- [Moving Files](#moving-files)
+- [Undoing Changes in working environment](#undoing-changes-in-working-environment)
+
+<!-- /TOC -->
 [3. Staging Environment](03-StagingEnvironment.md)
 [4. Committed Environment](04-CommittedEnvironment.md)
 [5. Remote Environment](05-RemoteEnvironment.md)
